@@ -1,0 +1,65 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "a4e81860fdb27b4d36bbc8e9ff4daacc",
+    "packages": [
+        {
+            "name": "fhooe/router",
+            "version": "v0.1.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "../fhooe-router",
+                "reference": "3e891d37ca1bef82d4ee4179ef9e72bea3ebbf9f"
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=7.4"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Fhooe\\Router\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Wolfgang Hochleitner",
+                    "email": "wolfgang.hochleitner@fh-hagenberg.at",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Martin Harrer",
+                    "email": "martin.harrer@fh-hagenberg.at",
+                    "role": "Developer"
+                }
+            ],
+            "description": "An example application or skeleton for getting started with basic routing in PHP.",
+            "keywords": [
+                "education",
+                "example",
+                "routing"
+            ],
+            "time": "2021-03-04T10:01:34+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "fhooe/router": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.4"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}
