@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a4e81860fdb27b4d36bbc8e9ff4daacc",
+    "content-hash": "b1c8f9d43c4ee96345bfcd945a0df102",
     "packages": [
         {
             "name": "fhooe/router",
@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "../fhooe-router",
-                "reference": "3e891d37ca1bef82d4ee4179ef9e72bea3ebbf9f"
+                "reference": "d6ecd7d9b0aca071eb5d9b948214202357d68239"
             },
             "require": {
                 "ext-mbstring": "*",
@@ -40,18 +40,18 @@
                     "role": "Developer"
                 }
             ],
-            "description": "An example application or skeleton for getting started with basic routing in PHP.",
+            "description": "A simple object oriented Router for educational purposes.",
             "keywords": [
                 "education",
-                "example",
+                "php",
                 "routing"
             ],
-            "time": "2021-03-04T10:01:34+00:00"
+            "time": "2021-03-05T15:08:57+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "fhooe/router": 20
     },

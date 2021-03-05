@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 use Fhooe\Router\Router;
 
@@ -15,6 +15,8 @@ if (DEBUG) {
     ini_set('display_startup_errors', '1');
 }
 
+// Static Router invocation. Get the route and handle it here yourself.
+/*
 $route = Router::getRoute("/code/fhooe-router-skeleton/public");
 
 switch ($route) {
@@ -24,4 +26,26 @@ switch ($route) {
     default:
         require __DIR__ . "/../views/404.html";
         break;
-}
+}*/
+
+// Instantiated Router invocation. Create an object, define the routes and run it.
+$router = new Router();
+
+$router->setBasePath("/code/fhooe-router-skeleton/public");
+$router->set404Callback(function () {
+    require __DIR__ . "/../views/404.html";
+});
+
+$router->get("/", function () {
+    require __DIR__ . "/../views/index.html";
+});
+
+$router->get("/form", function () {
+    require __DIR__ . "/../views/form.php";
+});
+
+$router->post("/form", function () {
+    require __DIR__ . "/../views/form.php";
+});
+
+$router->run();
