@@ -21,7 +21,7 @@ use Fhooe\Router\Router;
 
 <?php
 if (isset($_POST["firstName"])) {
-    echo "<p><strong>" . $_POST["firstName"] . "</strong></p>";
+    echo "<p>First name: <strong>" . $_POST["firstName"] . "</strong></p>";
 }
 ?>
 </body>
