@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 use Fhooe\Router\Router;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 
 require "../vendor/autoload.php";
 
@@ -25,6 +27,11 @@ if (DEBUG) {
  */
 // Create a new Router object.
 $router = new Router();
+
+// Create a monolog instance for logging in the skeleton. Pass it to the router to receive its log messages too.
+$logger = new Logger("skeleton-logger");
+$logger->pushHandler(new StreamHandler(__DIR__ . "/../logs/router.log"));
+$router->setLogger($logger);
 
 // Set a base path if your code is not in your server's document root.
 $router->setBasePath("/code/fhooe-router-skeleton/public");
