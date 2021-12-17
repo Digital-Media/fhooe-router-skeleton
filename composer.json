@@ -22,7 +22,7 @@
     ],
     "require": {
         "php": ">=7.4",
-        "fhooe/router": "^0.1"
+        "fhooe/router": "^0.2@dev"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.2"

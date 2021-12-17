@@ -4,25 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d8431eddee6a1980d609d678f185acf",
+    "content-hash": "1f8e1b85847adef477e242d1f1a2807a",
     "packages": [
         {
             "name": "fhooe/router",
-            "version": "v0.1.0",
+            "version": "v0.2.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Digital-Media/fhooe-router.git",
-                "reference": "b635b7541292f1688c94771c695102e99d9f725b"
+                "reference": "c36872603723814a158dff7aaa5979cef8d179ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Digital-Media/fhooe-router/zipball/b635b7541292f1688c94771c695102e99d9f725b",
-                "reference": "b635b7541292f1688c94771c695102e99d9f725b",
+                "url": "https://api.github.com/repos/Digital-Media/fhooe-router/zipball/c36872603723814a158dff7aaa5979cef8d179ca",
+                "reference": "c36872603723814a158dff7aaa5979cef8d179ca",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
-                "php": ">=7.4"
+                "php": ">=7.4",
+                "psr/log": "^3.0"
             },
             "require-dev": {
                 "phpstan/phpstan": "^1.2"
@@ -57,9 +58,59 @@
             ],
             "support": {
                 "issues": "https://github.com/Digital-Media/fhooe-router/issues",
-                "source": "https://github.com/Digital-Media/fhooe-router/tree/v0.1.0"
+                "source": "https://github.com/Digital-Media/fhooe-router/tree/v0.2.0"
             },
-            "time": "2021-12-16T00:08:44+00:00"
+            "time": "2021-12-17T15:06:04+00:00"
+        },
+        {
+            "name": "psr/log",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe5ea303b0887d5caefd3d431c3e61ad47037001",
+                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/log/tree/3.0.0"
+            },
+            "time": "2021-07-14T16:46:02+00:00"
         }
     ],
     "packages-dev": [
@@ -130,7 +181,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "fhooe/router": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
