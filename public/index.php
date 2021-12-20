@@ -5,6 +5,9 @@ declare(strict_types=1);
 use Fhooe\Router\Router;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
+use Twig\TwigFunction;
 
 require "../vendor/autoload.php";
 
@@ -33,6 +36,16 @@ $logger = new Logger("skeleton-logger");
 $logger->pushHandler(new StreamHandler(__DIR__ . "/../logs/router.log"));
 $router->setLogger($logger);
 
+// Create a new twig instance for advanced templates.
+$twig = new Environment(
+    new FilesystemLoader("../views"),
+    [
+        "cache" => "../cache",
+        "auto_reload" => true
+    ]
+);
+$twig->addFunction(new TwigFunction("url_for", [Router::class, "urlFor"]));
+
 // Set a base path if your code is not in your server's document root.
 $router->setBasePath("/code/fhooe-router-skeleton/public");
 
@@ -52,6 +65,14 @@ $router->get("/form", function () {
 
 $router->post("/form", function () {
     require __DIR__ . "/../views/form.php";
+});
+
+$router->get("/twigform", function () use ($twig) {
+    $twig->display("twigform.html.twig");
+});
+
+$router->post("/twigform", function () use ($twig) {
+    $twig->display("twigform.html.twig", ["firstName" => $_POST["firstName"]]);
 });
 
 // Run the router to get the party started.
