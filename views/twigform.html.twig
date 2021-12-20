@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fhooe-router: GET /form &amp; POST /form with Twig</title>
+</head>
+<body>
+<h1>GET and POST route</h1>
+<p>This form demonstrates calling a POST route.</p>
+<form method="post" action="{{ url_for("POST /twigform") }}">
+<label for="firstName">First Name:</label>
+<input name="firstName" id="firstName">
+<button type="submit">Submit</button>
+</form>
+
+{% if firstName is defined %}
+    <p>First name: <strong>{{ firstName }}</strong></p>
+{% endif %}
+
+</body>
+</html>
