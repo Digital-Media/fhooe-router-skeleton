@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>fhooe-router-skeleton: GET /</title>
+    <title>fhooe/router-skeleton: GET /</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../vendor/twbs/bootstrap-icons/font/bootstrap-icons.css">
@@ -13,7 +13,7 @@
         <div class="container-lg">
             <a class="navbar-brand" href="#">
                 <img src="../views/images/fhooe.svg" alt="" height="30" class="d-inline-block align-text-top">
-                fhooe-router-skeleton
+                fhooe/router-skeleton
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">/</a>
+                        <a class="nav-link active" aria-current="page" href="">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="form">PHP Form</a>
@@ -40,7 +40,7 @@
 </header>
 <main>
     <div class="container-lg mt-lg-4">
-        <h1>fhooe-router-skeleton</h1>
+        <h1>fhooe/router-skeleton</h1>
         <p class="lead">A skeleton application for the fhooe/router.</p>
 
         <h2>GET /</h2>
@@ -53,8 +53,7 @@
                 <div class="d-flex gap-2 w-100 justify-content-between">
                     <div>
                         <h6 class="mb-0">GET /form</h6>
-                        <p class="mb-0 opacity-75">A simple PHP-based form that can be submitted via POST
-                            method.</p>
+                        <p class="mb-0 opacity-75">A simple PHP-based form that can be submitted via POST method.</p>
                     </div>
                 </div>
             </a>
@@ -62,9 +61,9 @@
                 <i class="bi-input-cursor-text" style="font-size: 2em"></i>
                 <div class="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                        <h6 class="mb-0">GET /form</h6>
-                        <p class="mb-0 opacity-75">A form rendered using the Twig template engine that can be
-                            submitted via POST method.</p>
+                        <h6 class="mb-0">GET /twigform</h6>
+                        <p class="mb-0 opacity-75">A form rendered using the Twig template engine that can be submitted
+                            via POST method.</p>
                     </div>
                 </div>
             </a><a href="a/route/that/does/not/exist"
@@ -73,8 +72,7 @@
             <div class="d-flex gap-2 w-100 justify-content-between">
                 <div>
                     <h6 class="mb-0">GET /a/route/that/does/not/exist</h6>
-                    <p class="mb-0 opacity-75">Example for a route that does not exist and will trigger a 404
-                        page.</p>
+                    <p class="mb-0 opacity-75">Example for an undefined route that will trigger the 404 view.</p>
                 </div>
             </div>
         </a>
@@ -85,13 +83,16 @@
 <div class="container-lg">
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-lg-9 d-flex align-items-center">
-            <img src="images/fhooe.svg" alt="" height="24" class="me-2">
+            <img src="../views/images/fhooe.svg" alt="" height="24" class="me-2">
             <span class="text-muted">© FH Oberösterreich | Department of Digital Media</span>
         </div>
 
         <ul class="nav col-lg-3 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="text-muted" href="https://github.com/Digital-Media/fhooe-router-skeleton"><i
-                    class="bi-github"></i></a></li>
+            <li class="ms-3">
+                <a class="text-muted" href="https://github.com/Digital-Media/fhooe-router-skeleton">
+                    <i class="bi-github"></i>
+                </a>
+            </li>
         </ul>
     </footer>
 </div>
