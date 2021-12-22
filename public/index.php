@@ -51,7 +51,7 @@ $router->setBasePath("/code/fhooe-router-skeleton/public");
 
 // Set a 404 callback that is executed when no route matches.
 $router->set404Callback(function () {
-    require __DIR__ . "/../views/404.html";
+    require __DIR__ . "/../views/404.php";
 });
 
 // Define your routes with the get() and post() methods.
@@ -92,6 +92,6 @@ switch ($route) {
         require __DIR__ . "/../views/form.php";
         break;
     default:
-        require __DIR__ . "/../views/404.html";
+        require __DIR__ . "/../views/404.php";
         break;
 }*/
