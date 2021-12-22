@@ -63,8 +63,8 @@ $router->get("/form", function () {
     require __DIR__ . "/../views/form.php";
 });
 
-$router->post("/form", function () {
-    require __DIR__ . "/../views/form.php";
+$router->post("/formresult", function () {
+    require __DIR__ . "/../views/formresult.php";
 });
 
 $router->get("/twigform", function () use ($twig) {
