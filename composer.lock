@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Digital-Media/fhooe-router.git",
-                "reference": "c36872603723814a158dff7aaa5979cef8d179ca"
+                "reference": "2ffb6a2432710378dcd1d1a095f170584b655f76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Digital-Media/fhooe-router/zipball/c36872603723814a158dff7aaa5979cef8d179ca",
-                "reference": "c36872603723814a158dff7aaa5979cef8d179ca",
+                "url": "https://api.github.com/repos/Digital-Media/fhooe-router/zipball/2ffb6a2432710378dcd1d1a095f170584b655f76",
+                "reference": "2ffb6a2432710378dcd1d1a095f170584b655f76",
                 "shasum": ""
             },
             "require": {
@@ -60,7 +60,7 @@
                 "issues": "https://github.com/Digital-Media/fhooe-router/issues",
                 "source": "https://github.com/Digital-Media/fhooe-router/tree/v0.2.0"
             },
-            "time": "2021-12-17T15:06:04+00:00"
+            "time": "2021-12-22T11:40:30+00:00"
         },
         {
             "name": "monolog/monolog",
