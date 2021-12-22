@@ -17,7 +17,7 @@ $basePath = Router::getBasePath();
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-lg">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?= $basePath ?>/">
                 <img src="<?= $basePath ?>/../views/images/fhooe.svg" alt="" height="30" class="d-inline-block align-text-top">
                 fhooe/router-skeleton
             </a>
@@ -28,7 +28,7 @@ $basePath = Router::getBasePath();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= $basePath ?>">Home</a>
+                        <a class="nav-link active" aria-current="page" href="<?= $basePath ?>/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="<?= $basePath ?>/form">PHP Form</a>
