@@ -45,6 +45,7 @@ $twig = new Environment(
     ]
 );
 $twig->addFunction(new TwigFunction("url_for", [Router::class, "urlFor"]));
+$twig->addFunction(new TwigFunction("get_base_path", [Router::class, "getBasePath"]));
 
 // Set a base path if your code is not in your server's document root.
 $router->setBasePath("/code/fhooe-router-skeleton/public");
@@ -72,7 +73,7 @@ $router->get("/twigform", function () use ($twig) {
 });
 
 $router->post("/twigform", function () use ($twig) {
-    $twig->display("twigform.html.twig", ["firstName" => $_POST["firstName"]]);
+    $twig->display("twigform.html.twig", ["emailInput" => $_POST["emailInput"]]);
 });
 
 // Run the router to get the party started.

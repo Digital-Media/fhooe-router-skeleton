@@ -2,20 +2,108 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>fhooe-router: GET /form &amp; POST /form with Twig</title>
+    <title>fhooe/router-skeleton: GET /twigform &amp; POST /twigform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/twbs/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
-<h1>GET and POST route</h1>
-<p>This form demonstrates calling a POST route.</p>
-<form method="post" action="{{ url_for("POST /twigform") }}">
-<label for="firstName">First Name:</label>
-<input name="firstName" id="firstName">
-<button type="submit">Submit</button>
-</form>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-lg">
+            <a class="navbar-brand" href="{{ get_base_path() }}/">
+                <img src="../views/images/fhooe.svg" alt="" height="30" class="d-inline-block align-text-top">
+                fhooe/router-skeleton
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ get_base_path() }}/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="form">PHP Form</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="twigform">Twig Form</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="a/route/that/does/not/exist">Unknown Route (404)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="container-lg mt-lg-4">
+        <h1>fhooe/router-skeleton</h1>
+        <p class="lead">A skeleton application for fhooe/router.</p>
 
-{% if firstName is defined %}
-    <p>First name: <strong>{{ firstName }}</strong></p>
-{% endif %}
+        <h2>GET /twigform & POST /twigform</h2>
+        <p>This is the view for the "GET /twigform" route, a form using the Twig template engine.</p>
+        <p>It submits to the "POST /twigform" route which is resolved through the provided <code>&#123;&#123; url_for() &#125;&#125;</code>
+            method and loads the same template again. The output is only shown when the submitted values are
+            present.</p>
 
+        {% if emailInput is defined %}
+            <div class="alert alert-primary mt-5" role="alert">
+                Login successful!
+            </div>
+        {% endif %}
+
+        <div class="border p-3 mt-5">
+            <h3>Example Login Form</h3>
+            <form method="post" action="{{ url_for("POST /twigform") }}">
+                <div class="mb-3">
+                    <label for="emailInput" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="emailInput" name="emailInput"
+                           placeholder="you@example.com" aria-describedby="emailHelp" autocomplete="email" required>
+                    <div id="emailHelp" class="form-text">Please enter the email address you registered with.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="passwordInput" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="passwordInput" name="passwordInput"
+                           placeholder="Password" aria-describedby="passwordHelp" autocomplete="current-password"
+                           required>
+                    <div id="passwordHelp" class="form-text">Please enter your selected password.</div>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberCheck" name="rememberCheck">
+                    <label class="form-check-label" for="rememberCheck">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+        </div>
+
+        {% if emailInput is defined %}
+            <div class="border p-3 mt-5">
+                <h3>Example Login Form Result</h3>
+                <p>Welcome, <strong>{{ emailInput }}</strong>. You have been logged in.</p>
+            </div>
+        {% endif %}
+    </div>
+</main>
+
+<div class="container-lg">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-lg-9 d-flex align-items-center">
+            <img src="../views/images/fhooe.svg" alt="" height="24" class="me-2">
+            <span class="text-muted">© FH Oberösterreich | Department of Digital Media</span>
+        </div>
+
+        <ul class="nav col-lg-3 justify-content-end list-unstyled d-flex">
+            <li class="ms-3">
+                <a class="text-muted" href="https://github.com/Digital-Media/fhooe-router-skeleton">
+                    <i class="bi-github"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+</div>
+<script src="../vendor/twbs/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 </html>
