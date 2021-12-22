@@ -25,7 +25,8 @@
         "fhooe/router": "^0.2@dev",
         "monolog/monolog": "^2.3",
         "twig/twig": "^3.3",
-        "twbs/bootstrap": "^5.1"
+        "twbs/bootstrap": "^5.1",
+        "twbs/bootstrap-icons": "^1.7"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.2"
