@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "96b916df30fed24efdaf60a711b206b0",
+    "content-hash": "6211702b8f69526de00bb5b428812c24",
     "packages": [
         {
             "name": "fhooe/router",
-            "version": "v0.2.0.x-dev",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Digital-Media/fhooe-router.git",
-                "reference": "2ffb6a2432710378dcd1d1a095f170584b655f76"
+                "reference": "529c525782e684345163419411b0ddd4e5c441b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Digital-Media/fhooe-router/zipball/2ffb6a2432710378dcd1d1a095f170584b655f76",
-                "reference": "2ffb6a2432710378dcd1d1a095f170584b655f76",
+                "url": "https://api.github.com/repos/Digital-Media/fhooe-router/zipball/529c525782e684345163419411b0ddd4e5c441b2",
+                "reference": "529c525782e684345163419411b0ddd4e5c441b2",
                 "shasum": ""
             },
             "require": {
@@ -60,7 +60,7 @@
                 "issues": "https://github.com/Digital-Media/fhooe-router/issues",
                 "source": "https://github.com/Digital-Media/fhooe-router/tree/v0.2.0"
             },
-            "time": "2021-12-22T11:40:30+00:00"
+            "time": "2021-12-22T15:18:11+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -604,9 +604,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "fhooe/router": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
