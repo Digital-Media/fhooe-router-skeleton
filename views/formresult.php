@@ -4,12 +4,11 @@ use Fhooe\Router\Router;
 
 $basePath = Router::getBasePath();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>fhooe/router-skeleton: GET /form</title>
+    <title>fhooe/router-skeleton: POST /formresult</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../vendor/twbs/bootstrap-icons/font/bootstrap-icons.css">
@@ -48,34 +47,23 @@ $basePath = Router::getBasePath();
 <main>
     <div class="container-lg mt-lg-4">
         <h1>fhooe/router-skeleton</h1>
-        <p class="lead">A skeleton application for fhooe/router.</p>
+        <p class="lead">A skeleton application for the fhooe/router.</p>
 
-        <h2>GET /form</h2>
-        <p>This is the view for the "GET /form" route, a simple PHP-based form.</p>
-        <p>It submits to the "POST /formresult" route which is resolved through <code>Router::urlFor()</code>.</p>
+        <h2>POST /formresult</h2>
+        <p>This is the view for the "POST /formresult" route, a simple PHP-based form.</p>
+        <p>It shows the result of the "GET /form" route after it was submitted..</p>
+
+        <div class="alert alert-primary mt-5" role="alert">
+            Login successful!
+        </div>
 
         <div class="border p-3 mt-5">
-            <h3>Example Login Form</h3>
-            <form method="post" action="<?= Router::urlFor("POST /formresult") ?>">
-                <div class="mb-3">
-                    <label for="emailInput" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="emailInput" name="emailInput"
-                           placeholder="you@example.com" aria-describedby="emailHelp" autocomplete="email" required>
-                    <div id="emailHelp" class="form-text">Please enter the email address you registered with.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="passwordInput" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="passwordInput" name="passwordInput"
-                           placeholder="Password" aria-describedby="passwordHelp" autocomplete="current-password"
-                           required>
-                    <div id="passwordHelp" class="form-text">Please enter your selected password.</div>
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="rememberCheck" name="rememberCheck">
-                    <label class="form-check-label" for="rememberCheck">Remember me</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
-            </form>
+            <h3>Example Login Form Result</h3>
+            <?php
+            if (isset($_POST["emailInput"])) {
+                echo "<p>Welcome, <strong>" . $_POST["emailInput"] . "</strong>. You have been logged in.</p>";
+            }
+            ?>
         </div>
     </div>
 </main>
@@ -99,3 +87,4 @@ $basePath = Router::getBasePath();
 <script src="../vendor/twbs/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 </html>
+
