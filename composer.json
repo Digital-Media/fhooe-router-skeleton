@@ -32,6 +32,11 @@
         "phpstan/phpstan": "^1.2"
     },
     "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "": ["src/", "tests/"]
+        }
+    },
     "scripts": {
         "start": [
             "echo 'Web server launched on http://localhost:8888'",

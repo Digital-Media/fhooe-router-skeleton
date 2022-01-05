@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}fhooe/router-skeleton{% endblock %}
+{% block main %}
+    <h2>GET /twigform & POST /twigformresult</h2>
+    <p>This is the view for the "POST /twigformresult" route, a form using the Twig template engine.</p>
+    <p>It was called by the "GET /twigform" route.</p>
+    <div class="border p-3 mt-5">
+        <h3>Example Twig Template Form Result</h3>
+        <p>Welcome, <strong>{{ nameInput }}</strong>.</p>
+    </div>
+    <div class="alert alert-primary mt-5" role="alert">
+        You successfully entered your name!
+    </div>
+{% endblock %}

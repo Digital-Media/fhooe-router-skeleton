@@ -11,15 +11,15 @@ $basePath = Router::getBasePath();
     <meta charset="UTF-8">
     <title>fhooe/router-skeleton: GET /form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../vendor/twbs/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="<?= $basePath ?>/../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= $basePath ?>/../vendor/twbs/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-lg">
             <a class="navbar-brand" href="<?= $basePath ?>/">
-                <img src="../views/images/fhooe.svg" alt="" height="30" class="d-inline-block align-text-top">
+                <img src="<?= $basePath ?>/../views/images/fhooe.svg" alt="" height="30" class="d-inline-block align-text-top">
                 fhooe/router-skeleton
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -29,16 +29,10 @@ $basePath = Router::getBasePath();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= $basePath ?>/">Home</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="form">PHP Form</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="twigform">Twig Form</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="a/route/that/does/not/exist">Unknown Route (404)</a>
                     </li>
                 </ul>
             </div>
@@ -47,34 +41,38 @@ $basePath = Router::getBasePath();
 </header>
 <main>
     <div class="container-lg mt-lg-4">
-        <h1>fhooe/router-skeleton</h1>
-        <p class="lead">A skeleton application for fhooe/router.</p>
-
         <h2>GET /form</h2>
         <p>This is the view for the "GET /form" route, a simple PHP-based form.</p>
-        <p>It submits to the "POST /formresult" route which is resolved through <code>Router::urlFor()</code>.</p>
+        <p>It submits to the "POST /form" route which is resolved through <code>Router::urlFor()</code>.
+           The result is only shown, when $_POST['nameInput'] is present</p>
+
+            <?php
+            if (isset($_POST["nameInput"])) {
+                echo "<div class='border p-3 mt-5'>";
+                    echo "<h3>Example PHP Template Form Result</h3>";
+                    echo "<p>Welcome, <strong>" . $_POST["nameInput"] ;
+                    echo "<div class='alert alert-primary mt-5' role='alert'>";
+                        echo "<p>You successfully entered your name!</p>";
+                    echo "</div>";
+                echo "</div>";
+            }
+            ?>
+
 
         <div class="border p-3 mt-5">
-            <h3>Example Login Form</h3>
-            <form method="post" action="<?= Router::urlFor("POST /formresult") ?>">
+            <h3>Example PHP Template Form</h3>
+            <form method="post" action="<?= Router::urlFor("POST /form") ?>">
                 <div class="mb-3">
-                    <label for="emailInput" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="emailInput" name="emailInput"
-                           placeholder="you@example.com" aria-describedby="emailHelp" autocomplete="email" required>
-                    <div id="emailHelp" class="form-text">Please enter the email address you registered with.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="passwordInput" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="passwordInput" name="passwordInput"
-                           placeholder="Password" aria-describedby="passwordHelp" autocomplete="current-password"
-                           required>
-                    <div id="passwordHelp" class="form-text">Please enter your selected password.</div>
+                    <label for="nameInput" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="nameInput" name="nameInput"
+                           placeholder="your name" aria-describedby="nameHelp" autocomplete="name" required>
+                    <div id="nameHelp" class="form-text">Please enter your name.</div>
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="rememberCheck" name="rememberCheck">
                     <label class="form-check-label" for="rememberCheck">Remember me</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="submit" class="btn btn-primary">Send</button>
             </form>
         </div>
     </div>
@@ -96,6 +94,6 @@ $basePath = Router::getBasePath();
         </ul>
     </footer>
 </div>
-<script src="../vendor/twbs/bootstrap/dist/js/bootstrap.js"></script>
+<script src="<?= $basePath ?>/../vendor/twbs/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 </html>
