@@ -8,7 +8,7 @@
 
     <div class="border p-3 mt-5">
         <h3>Example Twig Template Form</h3>
-        <form method="post" action="{{ url_for("POST /twigformresult") }}">
+        <form method="post" action="{{ url_for("/twigformresult") }}">
             <div class="mb-3">
                 <label for="nameInput" class="form-label">Your Name</label>
                 <input type="text" class="form-control" id="nameInput" name="nameInput"
@@ -16,8 +16,26 @@
                 <div id="nameHelp" class="form-text">Please enter the email address you registered with.</div>
             </div>
             <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="rememberCheck" name="rememberCheck">
-                <label class="form-check-label" for="rememberCheck">Remember me</label>
+                <input type="checkbox" class="form-check-input" id="exampleCheck" name="exampleCheck">
+                <label class="form-check-label" for="rememberCheck">Example Check Box</label>
+            </div>
+            <div class="mb-3">
+                <label for="exampleselect" class="form-label">Product Category</label>
+                <select name="exampleselect" id="exampleselect" size="1" class="form-control">
+                        <option>Nothing to select so far</option>
+                </select>
+                <div id="exampleselectHelp" class="form-text">Please choose an option.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleradio" class="form-label">Example Radio</label>
+                <input type="radio" id="exampleradio" name="exampleradio"  value="1" checked="checked"><span>&nbsp;</span>
+            </div>
+            <div class="mb-3">
+                <label for="exampletextarea" class="form-label">Example Textarea</label>
+                <textarea name="exampletextarea" id="exampletextarea" cols="10" rows="2"
+                          class="form-control" aria-describedby="areaHelp"
+                          autocomplete="current-textarea"></textarea>
+                <div id="areaHelp" class="form-text">Please enter a text.</div>
             </div>
             <button type="submit" class="btn btn-primary">Send</button>
         </form>

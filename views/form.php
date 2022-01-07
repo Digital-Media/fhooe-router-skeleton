@@ -18,7 +18,7 @@ $basePath = Router::getBasePath();
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-lg">
-            <a class="navbar-brand" href="<?= $basePath ?>/">
+            <a class="navbar-brand" href="<?= Router::urlFor("/") ?>">
                 <img src="<?= $basePath ?>/../views/images/fhooe.svg" alt="" height="30" class="d-inline-block align-text-top">
                 fhooe/router-skeleton
             </a>
@@ -29,10 +29,10 @@ $basePath = Router::getBasePath();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="form">PHP Form</a>
+                        <a class="nav-link active" aria-current="page" href="<?= Router::urlFor("/form") ?>">PHP Form</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="twigform">Twig Form</a>
+                        <a class="nav-link" href="<?= Router::urlFor("/twigform") ?>">Twig Form</a>
                     </li>
                 </ul>
             </div>
@@ -61,16 +61,12 @@ $basePath = Router::getBasePath();
 
         <div class="border p-3 mt-5">
             <h3>Example PHP Template Form</h3>
-            <form method="post" action="<?= Router::urlFor("POST /form") ?>">
+            <form method="post" action="<?= Router::urlFor("/form") ?>">
                 <div class="mb-3">
                     <label for="nameInput" class="form-label">Your Name</label>
                     <input type="text" class="form-control" id="nameInput" name="nameInput"
                            placeholder="your name" aria-describedby="nameHelp" autocomplete="name" required>
                     <div id="nameHelp" class="form-text">Please enter your name.</div>
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="rememberCheck" name="rememberCheck">
-                    <label class="form-check-label" for="rememberCheck">Remember me</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Send</button>
             </form>

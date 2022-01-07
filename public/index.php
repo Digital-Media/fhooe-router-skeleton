@@ -8,10 +8,6 @@ use Monolog\Logger;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\TwigFunction;
-use Utilities\Utilities;
-use Exercises\Login;
-use Exercises\Register;
-use Exercises\Product;
 
 require "../vendor/autoload.php";
 
@@ -63,9 +59,7 @@ if (isset($_SESSION)) {
 $router->setBasePath("/code/fhooe-router-skeleton/public");
 
 // Set a 404 callback that is executed when no route matches.
-$router->set404Callback(function () {
-    require __DIR__ . "/404.php";
-});
+$router->set404Callback(fn() => $twig->display("404.html.twig"));
 
 $router->get("/", function () use ($twig) {
     $twig->display("index.html.twig");
@@ -89,73 +83,6 @@ $router->post("/twigformresult", function () use ($twig) {
 
 $router->get("/normalhtml", function() {
     require __DIR__ . "/../views/normalhtml.html";
-});
-
-$router->get("/imprint", function () use ($twig) {
-    // TODO Replace the text in $this->imprint with a imprint of your own using valid HTML5 syntax
-    // TODO Use string operator .= or heredoc for concatenating the lines
-    /*
-     * For a small site the imprint has to contain
-     * name/company name
-     * purpose of the site
-     * address of the owner of the site
-     */
-
-    // $imprint = "<p> Place the requested Imprint here </p>";
-    //
-    $imprint = <<<IMPRINT
-    <pre class="important"> 
-    Distribution of My Best Pictures
-    Main Road 1 
-    1234 Timbuktu 
-    Mali</pre>
-    IMPRINT;
-    //*/
-    $twig->display("imprint.html.twig", ["imprint" => $imprint]);
-});
-
-$router->get("/register", function () use ($twig) {
-    $twig->display("register.html.twig");
-});
-
-$router->post("/register", function () use($twig) {
-    $register = new Register($twig);
-    $register->isValid();
-});
-
-$router->get("/login", function () use ($twig) {
-    $twig->display("login.html.twig");
-});
-
-$router->post("/login", function () use($twig) {
-    $login = new Login($twig);
-    $login->isValid();
-});
-
-$router->get("/logout", function () use($twig) {
-    $_SESSION = [];
-    if (isset($_COOKIE[session_name()])) {
-        setcookie(session_name(), "", time() - 86400, "/");
-    }
-    session_destroy();
-    $redirect = Router::urlFor("GET /");
-    Utilities::redirectTo($redirect);
-});
-
-$router->get("/product", function () use ($twig) {
-    $_SESSION['redirect']="/product";
-    if (!isset($_SESSION['isloggedin']) || $_SESSION['isloggedin'] !== Utilities::generateLoginHash()) {
-        // Use this method call to enable login protection for this page
-        Utilities::redirectTo(Router::urlFor("GET /login"));
-    }
-    $product = new Product($twig);
-    $productCategory = $product->fillProductCategory();
-    $twig->display("product.html.twig", ["productCategory" => $productCategory]);
-});
-
-$router->post("/product", function () use($twig) {
-    $product = new Product($twig);
-    $product->isValid();
 });
 
 // Run the router to get the party started.

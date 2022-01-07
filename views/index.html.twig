@@ -10,7 +10,7 @@
     <p>This simply acts as the index page. Try other routes below:</p>
 
     <div class="list-group">
-        <a href="form" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <a href="{{ url_for("/form") }}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
             <i class="bi-input-cursor" style="font-size: 2em"></i>
             <div class="d-flex gap-2 w-100 justify-content-between">
                 <div>
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </a>
-        <a href="twigform" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <a href="{{ url_for("/twigform") }}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
             <i class="bi-input-cursor-text" style="font-size: 2em"></i>
             <div class="d-flex gap-2 w-100 justify-content-between">
                 <div>
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </a>
-        <a href="normalhtml" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <a href="{{ url_for("/normalhtml") }}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
             <i class="bi-blockquote-left" style="font-size: 2em"></i>
             <div class="d-flex gap-2 w-100 justify-content-between">
                 <div>
@@ -38,7 +38,7 @@
                 </div>
             </div>
         </a>
-        <a href="a/route/that/does/not/exist"
+        <a href="{{ url_for("/a/route/that/does/not/exist") }}"
                class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
             <i class="bi-exclamation-circle" style="font-size: 2em"></i>
             <div class="d-flex gap-2 w-100 justify-content-between">
