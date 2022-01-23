@@ -30,11 +30,24 @@ $basePath = Router::getBasePath();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= Router::urlFor("/form") ?>">PHP
-                            Form</a>
+                        <a class="nav-link active" aria-current="page" href="<?= Router::urlFor("/form") ?>">
+                            PHP Form
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= Router::urlFor("/twigform") ?>">Twig Form</a>
+                        <a class="nav-link" href="<?= Router::urlFor("/twigform") ?>">
+                            Twig Form
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Router::urlFor("/staticpage") ?>">
+                            Static HTML Page
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Router::urlFor("/a/route/that/does/not/exist") ?>">
+                            404 Page
+                        </a>
                     </li>
                 </ul>
             </div>
