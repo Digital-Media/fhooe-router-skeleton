@@ -6,12 +6,16 @@ use Fhooe\Router\Router;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Twig\Environment;
+use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
 use Twig\TwigFunction;
 
 require "../vendor/autoload.php";
 
-session_start();
+/**
+ * When working with sessions, start them here.
+ */
+//session_start();
 
 /**
  * Turn on debugging output to get more useful error messages while developing.
@@ -49,7 +53,7 @@ $twig = new Environment(
 );
 $twig->addFunction(new TwigFunction("url_for", [Router::class, "urlFor"]));
 $twig->addFunction(new TwigFunction("get_base_path", [Router::class, "getBasePath"]));
-$twig->addExtension(new \Twig\Extension\DebugExtension());
+$twig->addExtension(new DebugExtension());
 
 if (isset($_SESSION)) {
     $twig->addGlobal("_session", $_SESSION);
@@ -59,6 +63,7 @@ if (isset($_SESSION)) {
 $router->setBasePath("/code/fhooe-router-skeleton/public");
 
 // Set a 404 callback that is executed when no route matches.
+// Example for the use of an arrow function. It automatically includes variables from the parent scope (such as $twig).
 $router->set404Callback(fn() => $twig->display("404.html.twig"));
 
 $router->get("/", function () use ($twig) {
@@ -81,8 +86,8 @@ $router->post("/twigformresult", function () use ($twig) {
     $twig->display("twigformresult.html.twig", ["nameInput" => $_POST["nameInput"]]);
 });
 
-$router->get("/normalhtml", function() {
-    require __DIR__ . "/../views/normalhtml.html";
+$router->get("/staticpage", function () {
+    require __DIR__ . "/../views/staticpage.html";
 });
 
 // Run the router to get the party started.
