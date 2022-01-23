@@ -1,15 +1,22 @@
 {% extends "base.html.twig" %}
 
-{% block title %}fhooe/router-skeleton{% endblock %}
+{% block title %}fhooe/router-skeleton: POST /twigformresult{% endblock title %}
 {% block main %}
-    <h2>GET /twigform & POST /twigformresult</h2>
-    <p>This is the view for the "POST /twigformresult" route, a form using the Twig template engine.</p>
-    <p>It was called by the "GET /twigform" route.</p>
+    <h2>POST /twigformresult</h2>
+    <p>This is the view for the "POST /twigformresult" route, a form using the Twig template engine. It was called by the "GET /twigform" route and displays the results of the form submission.</p>
+
+    <div class="alert alert-primary" role="alert">You successfully submitted this form! The result is shown below</div>
+
     <div class="border p-3 mt-5">
         <h3>Example Twig Template Form Result</h3>
-        <p>Welcome, <strong>{{ nameInput }}</strong>.</p>
+        <p>The submitted name is shown as the author of the wise quote below.</p>
+        <figure class="p-3 m-0">
+            <blockquote class="blockquote">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+                {{ nameInput }}
+            </figcaption>
+        </figure>
     </div>
-    <div class="alert alert-primary mt-5" role="alert">
-        You successfully entered your name!
-    </div>
-{% endblock %}
+{% endblock main %}
