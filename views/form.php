@@ -30,7 +30,7 @@ $basePath = Router::getBasePath();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= Router::urlFor("/form") ?>">
+                        <a class="nav-link" aria-current="page" href="<?= Router::urlFor("/form") ?>">
                             PHP Form
                         </a>
                     </li>
@@ -87,7 +87,7 @@ $basePath = Router::getBasePath();
             <div class="border p-3 mt-5">
                 <h3>Example PHP Template Form Result</h3>
                 <p>The submitted name is shown as the author of the wise quote below.</p>
-                <figure class="p-3">
+                <figure class="p-3 m-0">
                     <blockquote class="blockquote">
                         <p>Lorem ipsum dolor sit amet.</p>
                     </blockquote>
