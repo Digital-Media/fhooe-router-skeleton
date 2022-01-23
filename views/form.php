@@ -19,7 +19,8 @@ $basePath = Router::getBasePath();
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-lg">
             <a class="navbar-brand" href="<?= Router::urlFor("/") ?>">
-                <img src="<?= $basePath ?>/../views/images/fhooe.svg" alt="" height="30" class="d-inline-block align-text-top">
+                <img src="<?= $basePath ?>/../views/images/fhooe.svg" alt="" height="30"
+                     class="d-inline-block align-text-top">
                 fhooe/router-skeleton
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -29,7 +30,8 @@ $basePath = Router::getBasePath();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= Router::urlFor("/form") ?>">PHP Form</a>
+                        <a class="nav-link active" aria-current="page" href="<?= Router::urlFor("/form") ?>">PHP
+                            Form</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= Router::urlFor("/twigform") ?>">Twig Form</a>
@@ -44,20 +46,13 @@ $basePath = Router::getBasePath();
         <h2>GET /form</h2>
         <p>This is the view for the "GET /form" route, a simple PHP-based form.</p>
         <p>It submits to the "POST /form" route which is resolved through <code>Router::urlFor()</code>.
-           The result is only shown, when $_POST['nameInput'] is present</p>
+            The result is only shown, when <code>$_POST["nameInput"]</code> is present.</p>
 
-            <?php
-            if (isset($_POST["nameInput"])) {
-                echo "<div class='border p-3 mt-5'>";
-                    echo "<h3>Example PHP Template Form Result</h3>";
-                    echo "<p>Welcome, <strong>" . $_POST["nameInput"] ;
-                    echo "<div class='alert alert-primary mt-5' role='alert'>";
-                        echo "<p>You successfully entered your name!</p>";
-                    echo "</div>";
-                echo "</div>";
-            }
-            ?>
-
+        <?php
+        if (isset($_POST["nameInput"])) {
+            echo '<div class="alert alert-primary" role="alert">You successfully submitted this form! The result is shown below</div>';
+        }
+        ?>
 
         <div class="border p-3 mt-5">
             <h3>Example PHP Template Form</h3>
@@ -65,12 +60,32 @@ $basePath = Router::getBasePath();
                 <div class="mb-3">
                     <label for="nameInput" class="form-label">Your Name</label>
                     <input type="text" class="form-control" id="nameInput" name="nameInput"
-                           placeholder="your name" aria-describedby="nameHelp" autocomplete="name" required>
+                           placeholder="Your first or full name" aria-describedby="nameHelp" autocomplete="name"
+                           required>
                     <div id="nameHelp" class="form-text">Please enter your name.</div>
                 </div>
                 <button type="submit" class="btn btn-primary">Send</button>
             </form>
         </div>
+
+        <?php
+        if (isset($_POST["nameInput"])) {
+            ?>
+            <div class="border p-3 mt-5">
+                <h3>Example PHP Template Form Result</h3>
+                <p>The submitted name is shown as the author of the wise quote below.</p>
+                <figure class="p-3">
+                    <blockquote class="blockquote">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        <?= $_POST["nameInput"] ?>
+                    </figcaption>
+                </figure>
+            </div>
+            <?php
+        }
+        ?>
     </div>
 </main>
 
