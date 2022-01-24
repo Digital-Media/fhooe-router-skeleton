@@ -52,6 +52,7 @@ if (isset($_SESSION)) {
 // Example for the use of an arrow function. It automatically includes variables from the parent scope (such as $twig).
 $router->set404Callback(fn() => $twig->display("404.html.twig"));
 
+// Define all routes here.
 $router->get("/", function () use ($twig) {
     $twig->display("index.html.twig");
 });
