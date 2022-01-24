@@ -26,7 +26,7 @@ The router invocation happens in `public/index.php`. This front controller file 
    $router = new Router();
    ```
 
-2. Define routes using the `get()` and `post()` methods. Supply a URI pattern to match against and a callback that is executed when pattern an protocol both match.
+2. Define routes using the `get()` and `post()` methods. Supply a URI pattern to match against and a callback that is executed when pattern and protocol both match.
 
    ```php
    $router->get("/", function() {
@@ -92,4 +92,4 @@ If you'd like to contribute, please refer to [CONTRIBUTING](https://github.com/D
 
 ## License
 
-NormForm is licensed under the MIT license. See [LICENSE](https://github.com/Digital-Media/fhooe-router-skeleton/blob/main/LICENSE) for more information.
+Router-Skeleton is licensed under the MIT license. See [LICENSE](https://github.com/Digital-Media/fhooe-router-skeleton/blob/main/LICENSE) for more information.

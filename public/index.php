@@ -6,24 +6,16 @@ use Fhooe\Router\Router;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Twig\Environment;
+use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
 use Twig\TwigFunction;
 
 require "../vendor/autoload.php";
 
 /**
- * Turn on debugging output to get more useful error messages while developing.
+ * When working with sessions, start them here.
  */
-const DEBUG = false;
-if (DEBUG) {
-    echo "<br>WARNING: Debugging is enabled. Set DEBUG to false for production use in " . __FILE__;
-    echo "<br>Connect via SSH and send tail -f /var/log/apache2/error.log";
-    echo " to see errors not displayed in Browser<br><br>";
-    error_reporting(E_ALL);
-    ini_set("html_errors", "1");
-    ini_set("display_errors", "1");
-    ini_set("display_startup_errors", "1");
-}
+//session_start();
 
 /**
  * Instantiated Router invocation. Create an object, define the routes and run it.
@@ -41,58 +33,49 @@ $twig = new Environment(
     new FilesystemLoader("../views"),
     [
         "cache" => "../cache",
-        "auto_reload" => true
+        "auto_reload" => true,
+        "debug" => true
     ]
 );
 $twig->addFunction(new TwigFunction("url_for", [Router::class, "urlFor"]));
 $twig->addFunction(new TwigFunction("get_base_path", [Router::class, "getBasePath"]));
+$twig->addExtension(new DebugExtension());
+
+if (isset($_SESSION)) {
+    $twig->addGlobal("_session", $_SESSION);
+}
 
 // Set a base path if your code is not in your server's document root.
-$router->setBasePath("/code/fhooe-router-skeleton/public");
+//$router->setBasePath("/code/fhooe-router-skeleton/public");
 
 // Set a 404 callback that is executed when no route matches.
-$router->set404Callback(function () {
-    require __DIR__ . "/../views/404.php";
-});
+// Example for the use of an arrow function. It automatically includes variables from the parent scope (such as $twig).
+$router->set404Callback(fn() => $twig->display("404.html.twig"));
 
-// Define your routes with the get() and post() methods.
-$router->get("/", function () {
-    require __DIR__ . "/../views/index.html";
+// Define all routes here.
+$router->get("/", function () use ($twig) {
+    $twig->display("index.html.twig");
 });
 
 $router->get("/form", function () {
     require __DIR__ . "/../views/form.php";
 });
 
-$router->post("/formresult", function () {
-    require __DIR__ . "/../views/formresult.php";
+$router->post("/form", function () {
+    require __DIR__ . "/../views/form.php";
 });
 
 $router->get("/twigform", function () use ($twig) {
     $twig->display("twigform.html.twig");
 });
 
-$router->post("/twigform", function () use ($twig) {
-    $twig->display("twigform.html.twig", ["emailInput" => $_POST["emailInput"]]);
+$router->post("/twigformresult", function () use ($twig) {
+    $twig->display("twigformresult.html.twig", ["nameInput" => $_POST["nameInput"]]);
+});
+
+$router->get("/staticpage", function () {
+    require __DIR__ . "/../views/staticpage.html";
 });
 
 // Run the router to get the party started.
 $router->run();
-
-/**
- * Static Router invocation. Get the route and handle it here yourself.
- */
-/*$route = Router::getRoute("/code/fhooe-router-skeleton/public");
-
-switch ($route) {
-    case "GET /":
-        require __DIR__ . "/../views/index.html";
-        break;
-    case "GET /form":
-    case "POST /form":
-        require __DIR__ . "/../views/form.php";
-        break;
-    default:
-        require __DIR__ . "/../views/404.php";
-        break;
-}*/
