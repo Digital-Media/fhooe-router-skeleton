@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e16f6630438b1f955b087a80bd946bc6",
+    "content-hash": "ebe18e9a6363a236c77bd3f1f766e64e",
     "packages": [
         {
             "name": "fhooe/router",
-            "version": "v0.3.0.x-dev",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Digital-Media/fhooe-router.git",
-                "reference": "1f1b6095d39eeaef55217887bbc2ed4a22c19de5"
+                "reference": "5be0e23266e4ef5d67457ce2f66c0c5e65c5f939"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Digital-Media/fhooe-router/zipball/1f1b6095d39eeaef55217887bbc2ed4a22c19de5",
-                "reference": "1f1b6095d39eeaef55217887bbc2ed4a22c19de5",
+                "url": "https://api.github.com/repos/Digital-Media/fhooe-router/zipball/5be0e23266e4ef5d67457ce2f66c0c5e65c5f939",
+                "reference": "5be0e23266e4ef5d67457ce2f66c0c5e65c5f939",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
                 "psr/log": "^3.0"
             },
             "require-dev": {
-                "phpstan/phpstan": "^1.2"
+                "phpstan/phpstan": "^1.4"
             },
             "type": "library",
             "autoload": {
@@ -60,7 +60,7 @@
                 "issues": "https://github.com/Digital-Media/fhooe-router/issues",
                 "source": "https://github.com/Digital-Media/fhooe-router/tree/v0.3.0"
             },
-            "time": "2022-01-07T13:17:55+00:00"
+            "time": "2022-01-24T01:04:43+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -610,9 +610,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "fhooe/router": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
