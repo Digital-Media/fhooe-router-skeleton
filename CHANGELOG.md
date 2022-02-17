@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1] - 2022-02-17
+
+## Changed
+- Make `.gitignore` exclude PhpStorm and Visual Studio Code project directories.
+- Bumped phpstan/phpstan to v1.4.6
+- Bumped twbs/bootstrap-icons to v1.8.1
+- Bumped twig/twig to v3.3.8
+
+### Fixed
+- Fixed that `.gitignore` would only ignore `router.log` files. All files are now excluded.
+
 ## [0.3.0] - 2022-01-24
 
 ### Added
@@ -53,7 +64,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added notes on Contributing.
 - Added this changelog.
 
-[Unreleased]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/Digital-Media/fhooe-router-skeleton/releases/tag/v0.1.0
