@@ -4,29 +4,29 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebe18e9a6363a236c77bd3f1f766e64e",
+    "content-hash": "f2dd7a3d9046bc2c95ce708ef4db65ab",
     "packages": [
         {
             "name": "fhooe/router",
-            "version": "v0.3.0",
+            "version": "v1.0.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Digital-Media/fhooe-router.git",
-                "reference": "5be0e23266e4ef5d67457ce2f66c0c5e65c5f939"
+                "reference": "15770dded6162731150e0a1edaecb46974821f83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Digital-Media/fhooe-router/zipball/5be0e23266e4ef5d67457ce2f66c0c5e65c5f939",
-                "reference": "5be0e23266e4ef5d67457ce2f66c0c5e65c5f939",
+                "url": "https://api.github.com/repos/Digital-Media/fhooe-router/zipball/15770dded6162731150e0a1edaecb46974821f83",
+                "reference": "15770dded6162731150e0a1edaecb46974821f83",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
-                "php": ">=7.4",
+                "php": "^8.1",
                 "psr/log": "^3.0"
             },
             "require-dev": {
-                "phpstan/phpstan": "^1.4"
+                "phpstan/phpstan": "^1.10"
             },
             "type": "library",
             "autoload": {
@@ -58,9 +58,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Digital-Media/fhooe-router/issues",
-                "source": "https://github.com/Digital-Media/fhooe-router/tree/v0.3.0"
+                "source": "https://github.com/Digital-Media/fhooe-router/tree/v1.0.0"
             },
-            "time": "2022-01-24T01:04:43+00:00"
+            "time": "2023-04-06T13:33:26+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -610,12 +610,14 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "fhooe/router": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4"
+        "php": "^8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
