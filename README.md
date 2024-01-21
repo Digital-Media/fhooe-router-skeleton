@@ -6,7 +6,7 @@ An example application, a.k.a. skeleton for getting started with [*fhooe-router*
 
 Use Composer to create a new project containing the skeleton files:
 
-```bas
+```bash
 composer create-project fhooe/fhooe-router-skeleton path/to/install
 ```
 
@@ -75,7 +75,15 @@ The router invocation happens in `public/index.php`. This front controller file 
    }
    ```
 
-Simple example view files in the form of HTML and PHP files are located in the `views` directory. Use a template engine such as [Twig](https://packagist.org/packages/twig/twig) for more functionality.
+## Displaying Output
+
+Simple example view files in the form of HTML and PHP files are located in the `views` directory together with [Twig](https://packagist.org/packages/twig/twig) examples for cleaner output.
+
+Three Twig extensions have been added.
+
+- `RouterExtension` provides the functions `url_for()` and `get_base_path()` in templates for generating URLs and retrieving the base path from the `Router` object.
+- `SessionExtension` provides the function `session(key)` for retrieving entries in the `$_SESSION` superglobal.
+- `DebugExtension` provides the function `dump()` for dumping variables in templates (similar to `var_dump()`).
 
 ## Browsing the Application
 
