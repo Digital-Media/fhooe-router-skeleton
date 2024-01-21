@@ -1,8 +1,8 @@
 <?php
 
-use Fhooe\Router\Router;
+global $router;
 
-$basePath = Router::getBasePath();
+$basePath = $router->getBasePath();
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ $basePath = Router::getBasePath();
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-lg">
-            <a class="navbar-brand" href="<?= Router::urlFor("/") ?>">
+            <a class="navbar-brand" href="<?= $router->urlFor("/") ?>">
                 <img src="<?= $basePath ?>/../views/images/fhooe.svg" alt="" height="30"
                      class="d-inline-block align-text-top">
                 fhooe/router-skeleton
@@ -30,22 +30,22 @@ $basePath = Router::getBasePath();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="<?= Router::urlFor("/form") ?>">
+                        <a class="nav-link" aria-current="page" href="<?= $router->urlFor("/form") ?>">
                             PHP Form
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= Router::urlFor("/twigform") ?>">
+                        <a class="nav-link" href="<?= $router->urlFor("/twigform") ?>">
                             Twig Form
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= Router::urlFor("/staticpage") ?>">
+                        <a class="nav-link" href="<?= $router->urlFor("/staticpage") ?>">
                             Static HTML Page
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= Router::urlFor("/a/route/that/does/not/exist") ?>">
+                        <a class="nav-link" href="<?= $router->urlFor("/a/route/that/does/not/exist") ?>">
                             404 Page
                         </a>
                     </li>
@@ -69,7 +69,7 @@ $basePath = Router::getBasePath();
 
         <div class="border p-3 mt-5">
             <h3>Example PHP Template Form</h3>
-            <form method="post" action="<?= Router::urlFor("/form") ?>">
+            <form method="post" action="<?= $router->urlFor("/form") ?>">
                 <div class="mb-3">
                     <label for="nameInput" class="form-label">Your Name</label>
                     <input type="text" class="form-control" id="nameInput" name="nameInput"
