@@ -3,12 +3,13 @@
 declare(strict_types=1);
 
 use Fhooe\Router\Router;
+use Fhooe\Twig\Extension\RouterExtension;
+use Fhooe\Twig\Extension\SessionExtension;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
-use Twig\TwigFunction;
 
 require "../vendor/autoload.php";
 
@@ -28,7 +29,7 @@ $logger = new Logger("skeleton-logger");
 $logger->pushHandler(new StreamHandler(__DIR__ . "/../logs/router.log"));
 $router->setLogger($logger);
 
-// Create a new twig instance for advanced templates.
+// Create a new Twig instance for advanced templates.
 $twig = new Environment(
     new FilesystemLoader("../views"),
     [
@@ -37,16 +38,16 @@ $twig = new Environment(
         "debug" => true
     ]
 );
-$twig->addFunction(new TwigFunction("url_for", [Router::class, "urlFor"]));
-$twig->addFunction(new TwigFunction("get_base_path", [Router::class, "getBasePath"]));
+
+// Add the router extension to Twig. This makes the url_for() and get_base_path() functions available in templates.
+$twig->addExtension(new RouterExtension($router));
+// Add the session extension to Twig. This makes the session() function available in templates to access entries in $_SESSION.
+$twig->addExtension(new SessionExtension());
+// Add the debug extension to Twig. This makes the dump() function available in templates to dump variables.
 $twig->addExtension(new DebugExtension());
 
-if (isset($_SESSION)) {
-    $twig->addGlobal("_session", $_SESSION);
-}
-
 // Set a base path if your code is not in your server's document root.
-//$router->setBasePath("/fhooe-router-skeleton/public");
+$router->setBasePath("/fhooe-router-skeleton/public");
 
 // Set a 404 callback that is executed when no route matches.
 // Example for the use of an arrow function. It automatically includes variables from the parent scope (such as $twig).
