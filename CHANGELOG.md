@@ -13,15 +13,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Twig templates as `url_for()` and `get_base_path()`.
 - Twig extension `SessionExtension` that provides a `session(key)` function to access entries from the session
   superglobal in Twig templates.
+- Introduced an icon for `fhooe/router` and `fhooe/router-skeleton`.
 
 ### Changed
 
 - Switched to PHP 8.3 as a minimum requirement.
 - Updated all dependencies.
+- Updated all views/templates to match fhooe-web-dock with dark mode support.
 
 ### Deprecated
 
 ### Removed
+
+- `twbs/bootstrap` and `twbs/bootstrap-icons` as dependencies. They are now loaded from included files and SVGs to
+  reduce installation time.
 
 ### Fixed
 
