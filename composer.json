@@ -19,9 +19,7 @@
         "php": "^8.3",
         "fhooe/router": "^1.0@dev",
         "monolog/monolog": "^3.5",
-        "twig/twig": "^3.8",
-        "twbs/bootstrap": "^5.3",
-        "twbs/bootstrap-icons": "^1.11"
+        "twig/twig": "^3.8"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.10"
