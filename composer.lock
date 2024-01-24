@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b0b4cff2f0184432093af528617000cd",
+    "content-hash": "434ac37c9fa632893bb58e7d7d44ed59",
     "packages": [
         {
             "name": "fhooe/router",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Digital-Media/fhooe-router.git",
-                "reference": "eb4f29fc77c13bf4cf84f8d90e6781e4a215ba1c"
+                "reference": "5b0cb9b75e6b7757ed1c5e91337352dd8d787520"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Digital-Media/fhooe-router/zipball/eb4f29fc77c13bf4cf84f8d90e6781e4a215ba1c",
-                "reference": "eb4f29fc77c13bf4cf84f8d90e6781e4a215ba1c",
+                "url": "https://api.github.com/repos/Digital-Media/fhooe-router/zipball/5b0cb9b75e6b7757ed1c5e91337352dd8d787520",
+                "reference": "5b0cb9b75e6b7757ed1c5e91337352dd8d787520",
                 "shasum": ""
             },
             "require": {
@@ -56,7 +56,62 @@
                 "issues": "https://github.com/Digital-Media/fhooe-router/issues",
                 "source": "https://github.com/Digital-Media/fhooe-router/tree/v1.0.0"
             },
-            "time": "2024-01-21T02:25:08+00:00"
+            "time": "2024-01-23T15:08:10+00:00"
+        },
+        {
+            "name": "fhooe/twig-extensions",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Digital-Media/fhooe-twig-extensions.git",
+                "reference": "2f53170e7ed9eb4b168156124210b2640c6ee46b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Digital-Media/fhooe-twig-extensions/zipball/2f53170e7ed9eb4b168156124210b2640c6ee46b",
+                "reference": "2f53170e7ed9eb4b168156124210b2640c6ee46b",
+                "shasum": ""
+            },
+            "require": {
+                "fhooe/router": "^1.0@dev",
+                "php": "^8.3",
+                "twig/twig": "^3.8"
+            },
+            "require-dev": {
+                "pestphp/pest": "^2.32",
+                "phpstan/phpstan": "^1.10"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Fhooe\\Twig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Wolfgang Hochleitner",
+                    "email": "wolfgang.hochleitner@fh-hagenberg.at",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A collection of Twig extensions for other fhooe packages",
+            "keywords": [
+                "education",
+                "extensions",
+                "routing",
+                "sessions",
+                "twig"
+            ],
+            "support": {
+                "issues": "https://github.com/Digital-Media/fhooe-twig-extensions/issues",
+                "source": "https://github.com/Digital-Media/fhooe-twig-extensions/tree/main"
+            },
+            "time": "2024-01-24T13:37:14+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -533,16 +588,16 @@
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.56",
+            "version": "1.10.57",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "27816a01aea996191ee14d010f325434c0ee76fa"
+                "reference": "1627b1d03446904aaa77593f370c5201d2ecc34e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/27816a01aea996191ee14d010f325434c0ee76fa",
-                "reference": "27816a01aea996191ee14d010f325434c0ee76fa",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/1627b1d03446904aaa77593f370c5201d2ecc34e",
+                "reference": "1627b1d03446904aaa77593f370c5201d2ecc34e",
                 "shasum": ""
             },
             "require": {
@@ -591,13 +646,14 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-01-15T10:43:00+00:00"
+            "time": "2024-01-24T11:51:34+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fhooe/router": 20
+        "fhooe/router": 20,
+        "fhooe/twig-extensions": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

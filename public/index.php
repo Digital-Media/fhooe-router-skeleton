@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Fhooe\Router\Router;
-use Fhooe\Twig\Extension\RouterExtension;
-use Fhooe\Twig\Extension\SessionExtension;
+use Fhooe\Twig\RouterExtension;
+use Fhooe\Twig\SessionExtension;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Twig\Environment;
