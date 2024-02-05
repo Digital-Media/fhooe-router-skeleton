@@ -8,11 +8,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
 
-- Twig extension `RouterExtension` that makes the `urlFor()` and `getBasePath()` methods from the router available in
-  Twig templates as `url_for()` and `get_base_path()`.
-- Twig extension `SessionExtension` that provides a `session(key)` function to access entries from the session
-  superglobal in Twig templates.
+## [1.0.0] - 2024-02-05
+
+### Added
+
+- Twig extension `RouterExtension` from `fhooe/twig-extensions` that makes the `urlFor()` and `getBasePath()` methods
+  from the router available in Twig templates as `url_for()` and `get_base_path()`.
+- Twig extension `SessionExtension` from `fhooe/twig-extensions` that provides a `session(key)` function to access
+  entries from the session superglobal in Twig templates.
 - Introduced an icon for `fhooe/router` and `fhooe/router-skeleton`.
 
 ### Changed
@@ -21,16 +30,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated all dependencies.
 - Updated all views/templates to match fhooe-web-dock with dark mode support.
 
-### Deprecated
-
 ### Removed
 
 - `twbs/bootstrap` and `twbs/bootstrap-icons` as dependencies. They are now loaded from included files and SVGs to
   reduce installation time.
-
-### Fixed
-
-### Security
+- `composer.lock` is now excluded from version control for more flexibility.
 
 ## [0.3.1] - 2022-02-17
 
@@ -107,12 +111,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added notes on Contributing.
 - Added this changelog.
 
-[Unreleased]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.3.1...HEAD
-
+[Unreleased]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.3.1...v1.0.0
 [0.3.1]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.3.0...v0.3.1
-
 [0.3.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.2.0...v0.3.0
-
 [0.2.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.1.0...v0.2.0
-
 [0.1.0]: https://github.com/Digital-Media/fhooe-router-skeleton/releases/tag/v0.1.0
