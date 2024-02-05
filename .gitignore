@@ -4,5 +4,4 @@ composer.phar
 /cache/
 /logs/*
 !/logs/README.md
-composer.lock
 /vendor/
