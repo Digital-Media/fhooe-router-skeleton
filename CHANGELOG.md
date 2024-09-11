@@ -8,11 +8,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 ### Changed
+
 ### Deprecated
+
 ### Removed
+
 ### Fixed
+
 ### Security
+
+## [1.0.1] - 2024-09-11
+
+### Fixed
+
+- Added `flex-shrink-0` to SVG icons to avoid the shrinking of icons. See
+  also [9: Avoid shrinking of SVG icons in the list group](https://github.com/Digital-Media/fhooe-router-skeleton/issues/9).
+
+### Security
+
+- Bumped `twig/twig` dependency for the dashboard in `composer.json` to 3.14 due to CVE-2024-45411.
 
 ## [1.0.0] - 2024-02-05
 
@@ -41,9 +57,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Make `.gitignore` exclude PhpStorm and Visual Studio Code project directories.
-- Bumped phpstan/phpstan to v1.4.6
-- Bumped twbs/bootstrap-icons to v1.8.1
-- Bumped twig/twig to v3.3.8
+- Bumped `phpstan/phpstan` to v1.4.6
+- Bumped `twbs/bootstrap-icons` to v1.8.1
+- Bumped `twig/twig` to v3.3.8
 
 ### Fixed
 
@@ -61,8 +77,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Updated to fhooe/router v0.3.0.
-- Bumped phpstan/phpstan to 1.4.
+- Updated to `fhooe/router` v0.3.0.
+- Bumped `phpstan/phpstan` to 1.4.
 - The result for "GET /form" (PHP form example) is now shown in the same view as "POST /form"
 - The Twig form example is now split up in "GET /twigform" and "POST /twigformresult".
 - Main page is now displayed using Twig.
@@ -90,7 +106,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Updated to fhooe/router v0.2.0.
+- Updated to `fhooe/router` v0.2.0.
 - Updated the view for "GET /" using Bootstrap. See
   also: [3: Use Bootstrap for enhanced views](https://github.com/Digital-Media/fhooe-router-skeleton/issues/3).
 - Updated the view for "GET /form" using Bootstrap. See
@@ -111,9 +127,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added notes on Contributing.
 - Added this changelog.
 
-[Unreleased]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v1.0.1...HEAD
+
+[1.0.1]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v1.0.0...v1.0.1
+
 [1.0.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.3.1...v1.0.0
+
 [0.3.1]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.3.0...v0.3.1
+
 [0.3.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.2.0...v0.3.0
+
 [0.2.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.1.0...v0.2.0
+
 [0.1.0]: https://github.com/Digital-Media/fhooe-router-skeleton/releases/tag/v0.1.0
