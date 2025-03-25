@@ -84,6 +84,10 @@ $router->post("/twigformresult", function () use ($twig) {
     $twig->display("twigformresult.html.twig", ["nameInput" => $_POST["nameInput"]]);
 });
 
+$router->get("/product/{id}[/]", function ($id) use ($twig) {
+    $twig->display("product.html.twig", ["id" => $id]);
+});
+
 $router->get("/staticpage", function () {
     require __DIR__ . "/../views/staticpage.html";
 });
