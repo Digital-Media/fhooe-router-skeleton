@@ -10,6 +10,8 @@ use Monolog\Logger;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
+use Monolog\Formatter\LineFormatter;
+use Monolog\Processor\PsrLogMessageProcessor;
 
 require "../vendor/autoload.php";
 
@@ -21,13 +23,21 @@ require "../vendor/autoload.php";
 /**
  * Instantiated Router invocation. Create an object, define the routes and run it.
  */
-// Create a new Router object.
-$router = new Router();
-
-// Create a monolog instance for logging in the skeleton. Pass it to the router to receive its log messages too.
+// Create a monolog instance for logging in the skeleton.
 $logger = new Logger("skeleton-logger");
-$logger->pushHandler(new StreamHandler(__DIR__ . "/../logs/router.log"));
-$router->setLogger($logger);
+$logger->pushProcessor(new PsrLogMessageProcessor());
+$formatter = new LineFormatter(
+    "[%datetime%] %channel%.%level_name%: %message%\n",
+    "d.m.Y H:i:s T",
+    true,
+    true
+);
+$handler = new StreamHandler(__DIR__ . "/../logs/router.log");
+$handler->setFormatter($formatter);
+$logger->pushHandler($handler);
+
+// Create a new Router object with the logger.
+$router = new Router($logger);
 
 // Create a new Twig instance for advanced templates.
 $twig = new Environment(
