@@ -26,14 +26,14 @@
         }
     ],
     "require": {
-        "php": "^8.3",
+        "php": "^8.4",
         "fhooe/router": "^2.0",
-        "fhooe/twig-extensions": "*",
-        "monolog/monolog": "^3.7",
-        "twig/twig": "^3.14"
+        "fhooe/twig-extensions": "^2.0",
+        "monolog/monolog": "^3.9",
+        "twig/twig": "^3.20"
     },
     "require-dev": {
-        "phpstan/phpstan": "^1.12"
+        "phpstan/phpstan": "^2.1"
     },
     "minimum-stability": "dev",
     "autoload": {
