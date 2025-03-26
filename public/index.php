@@ -5,13 +5,13 @@ declare(strict_types=1);
 use Fhooe\Router\Router;
 use Fhooe\Twig\RouterExtension;
 use Fhooe\Twig\SessionExtension;
+use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use Monolog\Processor\PsrLogMessageProcessor;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
-use Monolog\Formatter\LineFormatter;
-use Monolog\Processor\PsrLogMessageProcessor;
 
 require "../vendor/autoload.php";
 
@@ -30,7 +30,7 @@ $formatter = new LineFormatter(
     "[%datetime%] %channel%.%level_name%: %message%\n",
     "d.m.Y H:i:s T",
     true,
-    true
+    true,
 );
 $handler = new StreamHandler(__DIR__ . "/../logs/router.log");
 $handler->setFormatter($formatter);
@@ -45,8 +45,8 @@ $twig = new Environment(
     [
         "cache" => "../cache",
         "auto_reload" => true,
-        "debug" => true
-    ]
+        "debug" => true,
+    ],
 );
 
 // Add the router extension to Twig. This makes the url_for() and get_base_path() functions available in templates.
