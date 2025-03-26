@@ -40,14 +40,15 @@ The router invocation happens in `public/index.php`. This front controller file 
        // e.g., load a view
    });
    ```
-   **Placeholders:** You can define route placeholders using curly brackets. The name of the placeholder will be available as a parameter in the callback, the actual value in the URI will be its argument.
+   **Placeholders:** You can define route placeholders using curly brackets. The name of the placeholder will be available as a parameter in the callback, and the actual value in the URI will be its argument.
 
    ```php
    $router->get("/product/{id}", function ($id) {
       // e.g., load a view to display the product
    });
+   ```
 
-   **Optional parts:** You can make parts of the route optional by putting it in square brackets. That way a route will match in both ways. This can be, for example, used to make a route work with or without a trailing slash.
+   **Optional parts:** You can make route parts optional by putting them in square brackets. That way, a route will match both ways. This can be, for example, used to make a route work with or without a trailing slash.
 
    ```php
    $router->get("/form[/]", function () {
@@ -63,7 +64,7 @@ The router invocation happens in `public/index.php`. This front controller file 
    });
    ```
 
-4. Optional: define a base path if your application is not located in your server's document root. 
+4. Optional: Define a base path if your application is not located in your server's document root. 
 
    ```php
    $router->setBasePath("/path/to/your/files");
@@ -108,7 +109,7 @@ Three Twig extensions have been added.
 
 ## Browsing the Application
 
-For taking a quick look, you can use the PHP built-in web server:
+To take a quick look, you can use the PHP built-in web server:
 
     cd path/to/install
     composer start
