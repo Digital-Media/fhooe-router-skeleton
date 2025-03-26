@@ -32,6 +32,9 @@ $basePath = $router->getBasePath();
                 <a href="<?= $router->urlFor("/twigform") ?>" class="nav-link">Twig Form</a>
             </li>
             <li class="nav-item">
+                <a href="<?= $router->urlFor("/product/1") ?>" class="nav-link">Product Page</a>
+            </li>
+            <li class="nav-item">
                 <a href="<?= $router->urlFor("/staticpage") ?>" class="nav-link">Static HTML Page</a>
             </li>
             <li class="nav-item">
