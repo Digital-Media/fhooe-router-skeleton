@@ -126,7 +126,10 @@ $basePath = $router->getBasePath();
                         <p>Lorem ipsum dolor sit amet.</p>
                     </blockquote>
                     <figcaption class="blockquote-footer">
-                        <?= htmlspecialchars(is_string($_POST["nameInput"]) ? $_POST["nameInput"] : "", ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5) ?>
+                        <?= htmlspecialchars(
+                            is_string($_POST["nameInput"]) ? $_POST["nameInput"] : "",
+                            ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5,
+                        ) ?>
                     </figcaption>
                 </figure>
             </div>
