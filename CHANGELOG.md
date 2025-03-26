@@ -8,16 +8,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [2.0.0] - 2025-03-26
+
+### Added
+
+- Added an example route and view for route placeholders and optional parts.
+- Added a formatter and PSR-3 handler for log messages.
 
 ### Changed
 
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
+- Based on `Router` 2.0.0.
+- Requires `RouterExtension` and `SessionExtension` 2.0.0.
+- Switched to PHP 8.4 as a minimum requirement.
+- Updated all dependencies.
 
 ## [1.0.1] - 2024-09-11
 
@@ -127,16 +136,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added notes on Contributing.
 - Added this changelog.
 
-[Unreleased]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v1.0.1...HEAD
-
+[Unreleased]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v1.0.1...v2.0.0
 [1.0.1]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v1.0.0...v1.0.1
-
 [1.0.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.3.1...v1.0.0
-
 [0.3.1]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.3.0...v0.3.1
-
 [0.3.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.2.0...v0.3.0
-
 [0.2.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v0.1.0...v0.2.0
-
 [0.1.0]: https://github.com/Digital-Media/fhooe-router-skeleton/releases/tag/v0.1.0
