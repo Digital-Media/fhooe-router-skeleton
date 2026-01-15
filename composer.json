@@ -15,9 +15,18 @@
             "role": "Developer"
         }
     ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../fhooe-router",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
     "require": {
         "php": "^8.4",
-        "fhooe/router": "^2.0",
+        "fhooe/router": "@dev",
         "fhooe/twig-extensions": "^2.0",
         "monolog/monolog": "^3.9",
         "twig/twig": "^3.20"
