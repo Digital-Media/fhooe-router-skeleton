@@ -22,14 +22,21 @@
             "options": {
                 "symlink": true
             }
+        },
+        {
+            "type": "path",
+            "url": "../fhooe-latte-extensions",
+            "options": {
+                "symlink": true
+            }
         }
     ],
     "require": {
         "php": "^8.5",
+        "fhooe/latte-extensions": "@dev",
         "fhooe/router": "dev-main as 2.1.0",
-        "fhooe/twig-extensions": "^2.0",
-        "monolog/monolog": "^3.10",
-        "twig/twig": "^3.23"
+        "latte/latte": "^3.0",
+        "monolog/monolog": "^3.10"
     },
     "require-dev": {
         "phpstan/phpstan": "^2.1",

@@ -29,7 +29,7 @@ $basePath = $router->getBasePath();
                 <a href="<?= $router->urlFor("/form") ?>" class="nav-link">PHP Form</a>
             </li>
             <li class="nav-item">
-                <a href="<?= $router->urlFor("/twigform") ?>" class="nav-link">Twig Form</a>
+                <a href="<?= $router->urlFor("/templateform") ?>" class="nav-link">Template Form</a>
             </li>
             <li class="nav-item">
                 <a href="<?= $router->urlFor("/product/1") ?>" class="nav-link">Product Page</a>
