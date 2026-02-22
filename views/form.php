@@ -2,7 +2,7 @@
 
 global $router;
 
-$basePath = $router->getBasePath();
+$basePath = $router->basePath;
 ?>
 
 <!DOCTYPE html>

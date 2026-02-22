@@ -46,7 +46,7 @@ $latte->addExtension(new RouterExtension($router));
 $latte->addExtension(new SessionExtension());
 
 // Set a base path if your code is not in your server's document root.
-$router->setBasePath("/fhooe-router-skeleton/public");
+$router->basePath = "/fhooe-router-skeleton/public";
 
 // Set a 404 callback executed when no route matches.
 // Example for the use of an arrow function. It automatically includes variables from the parent scope (such as $latte).
