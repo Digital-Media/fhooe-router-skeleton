@@ -15,22 +15,6 @@
             "role": "Developer"
         }
     ],
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../fhooe-router",
-            "options": {
-                "symlink": false
-            }
-        },
-        {
-            "type": "path",
-            "url": "../fhooe-latte-extensions",
-            "options": {
-                "symlink": false
-            }
-        }
-    ],
     "require": {
         "php": "^8.5",
         "fhooe/latte-extensions": "^1.0",
@@ -39,9 +23,9 @@
         "monolog/monolog": "^3.10"
     },
     "require-dev": {
-        "phpstan/phpstan": "^2.1",
-        "ergebnis/composer-normalize": "^2.45",
-        "friendsofphp/php-cs-fixer": "^3.94"
+        "ergebnis/composer-normalize": "^2.50",
+        "friendsofphp/php-cs-fixer": "^3.94",
+        "phpstan/phpstan": "^2.1"
     },
     "minimum-stability": "stable",
     "autoload": {
@@ -49,6 +33,11 @@
             "": [
                 "src/"
             ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
         }
     },
     "scripts": {
@@ -63,10 +52,5 @@
             "@cs-check",
             "@phpstan"
         ]
-    },
-    "config": {
-        "allow-plugins": {
-            "ergebnis/composer-normalize": true
-        }
     }
 }
