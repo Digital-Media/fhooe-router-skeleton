@@ -20,14 +20,14 @@
             "type": "path",
             "url": "../fhooe-router",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         },
         {
             "type": "path",
             "url": "../fhooe-latte-extensions",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         }
     ],
