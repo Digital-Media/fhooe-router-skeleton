@@ -33,14 +33,15 @@
     ],
     "require": {
         "php": "^8.5",
-        "fhooe/latte-extensions": "@dev",
-        "fhooe/router": "dev-main as 2.1.0",
+        "fhooe/latte-extensions": "^1.0",
+        "fhooe/router": "^3.0",
         "latte/latte": "^3.0",
         "monolog/monolog": "^3.10"
     },
     "require-dev": {
         "phpstan/phpstan": "^2.1",
-        "ergebnis/composer-normalize": "^2.45"
+        "ergebnis/composer-normalize": "^2.45",
+        "friendsofphp/php-cs-fixer": "^3.94"
     },
     "minimum-stability": "stable",
     "autoload": {
@@ -51,12 +52,15 @@
         }
     },
     "scripts": {
+        "cs-check": "php-cs-fixer fix --dry-run --diff",
+        "cs-fix": "php-cs-fixer fix",
         "phpstan": "phpstan analyse public views --memory-limit=-1 --level 9",
         "start": [
             "echo 'Web server launched on http://localhost:8888'",
             "php -S localhost:8888 -t public"
         ],
         "test": [
+            "@cs-check",
             "@phpstan"
         ]
     },

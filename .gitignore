@@ -9,3 +9,6 @@ composer.phar
 # Claude Code local settings
 .claude/settings.local.json
 CLAUDE.md
+
+# PHP-CS-Fixer cache
+.php-cs-fixer.cache

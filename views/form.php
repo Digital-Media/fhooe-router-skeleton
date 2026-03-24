@@ -102,7 +102,7 @@ $basePath = $router->basePath;
         if (isset($_POST["nameInput"])) {
             echo '<div class="alert alert-success" role="alert">You successfully submitted this form! The result is shown below.</div>';
         }
-        ?>
+?>
 
         <div class="border p-3 mt-5">
             <h3>Example PHP Template Form</h3>
@@ -119,8 +119,8 @@ $basePath = $router->basePath;
         </div>
 
         <?php
-        if (isset($_POST["nameInput"])) {
-            ?>
+if (isset($_POST["nameInput"])) {
+    ?>
             <div class="border p-3 mt-5">
                 <h3>Example PHP Template Form Result</h3>
                 <p>The submitted name is shown as the author of the wise quote below.</p>
@@ -137,8 +137,8 @@ $basePath = $router->basePath;
                 </figure>
             </div>
             <?php
-        }
-        ?>
+}
+?>
     </main>
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
