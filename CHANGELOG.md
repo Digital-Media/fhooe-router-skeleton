@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [3.0.1] - 2026-05-10
+
+### Changed
+
+- Updated `latte/latte` to 3.1.0, also dev dependencies.
+
+### Fixed
+
+- Replaced deprecated Latte setTempDirectory() with setCacheDirectory() in index.php.
+
 ## [3.0.0] - 2026-03-24
 
 ### Changed
@@ -151,7 +161,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added notes on Contributing.
 - Added this changelog.
 
-[Unreleased]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v3.0.1...HEAD
+[3.0.1]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v1.0.1...v2.0.0
 [1.0.1]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v1.0.0...v1.0.1
