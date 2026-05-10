@@ -41,7 +41,7 @@ $router = new Router($logger);
 // Create a new Latte instance for advanced templates.
 $latte = new Engine();
 $latte->setLoader(new FileLoader(__DIR__ . "/../views"));
-$latte->setTempDirectory(__DIR__ . "/../cache");
+$latte->setCacheDirectory(__DIR__ . "/../cache");
 $latte->addExtension(new RouterExtension($router));
 $latte->addExtension(new SessionExtension());
 
@@ -70,7 +70,10 @@ $router->get("/templateform", function () use ($latte) {
 });
 
 $router->post("/templateformresult", function () use ($latte) {
-    $latte->render("templateformresult.latte", ["nameInput" => $_POST["nameInput"]]);
+    $latte->render(
+        "templateformresult.latte",
+        ["nameInput" => $_POST["nameInput"]],
+    );
 });
 
 $router->get("/product/{id}[/]", function ($id) use ($latte) {
