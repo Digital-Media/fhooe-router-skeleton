@@ -14,6 +14,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [3.0.2] - 2026-05-25
+
+### Changed
+
+- Switched outdated reference to the Twig template engine to Latte in README.md.
+
+### Removed
+
+- README.md: Removed a section about the use of the static `Router::getRoute()` since this was removed in *fhooe/router*
+  3.0.0.
+
 ## [3.0.1] - 2026-05-10
 
 ### Changed
@@ -161,7 +172,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added notes on Contributing.
 - Added this changelog.
 
-[Unreleased]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v3.0.1...HEAD
+[Unreleased]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v3.0.2...HEAD
+[3.0.2]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/Digital-Media/fhooe-router-skeleton/compare/v1.0.1...v2.0.0
